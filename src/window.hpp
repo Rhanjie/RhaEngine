@@ -6,16 +6,15 @@
 namespace rha{
     class cWindow{
         private:
+         GLFWwindow* handle;
          bool run;
         public:
          cWindow(glm::vec2 size, const std::string& title, cLogger& logger);
 
-         GLFWwindow* handle;
-
-
-         inline bool getRun(){return run;}
          inline void close(){glfwTerminate(); run=false;}
          inline void display(){glfwSwapBuffers(handle);}
+         inline bool getRun(){return run;}
+         inline GLFWwindow* getHandle(){return handle;}
     };
 }
 

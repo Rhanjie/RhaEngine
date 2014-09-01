@@ -8,9 +8,9 @@ cLogger::cLogger(const std::string& path): exit(0){
         this->exit=true;
     }
 } cLogger &cLogger::operator <<(const std::string& text){
-    file<<text;
+    file<<text<<"\n";
     file.flush();
     if(check_phrase(text, "ERROR")){
         this->exit=true;
-    }
+    } return *this;
 }
