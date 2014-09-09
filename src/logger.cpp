@@ -6,9 +6,9 @@ cLogger::cLogger(const std::string& path): exit(0){
     if(!file.is_open()){
         std::cout<<"A fatal error occurred logger!";
         this->exit=true;
-    }
+    } //logger<<"Logger is ready!\n";
 } cLogger &cLogger::operator <<(const std::string& text){
-    file<<text<<"\n";
+    file<<text;
     file.flush();
     if(check_phrase(text, "ERROR")){
         this->exit=true;

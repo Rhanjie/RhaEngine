@@ -10,10 +10,10 @@ namespace rha{
          bool exit;
         public:
          cLogger(const std::string& path);
-         ~cLogger(){file.close();}
+         ~cLogger(){*this<<"\n\n"; file.close();}
 
-         inline bool getExit(){return exit;}
          cLogger &operator <<(const std::string& text);
+         inline bool getExit(){return exit;}
     };
 }
 

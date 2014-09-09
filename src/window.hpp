@@ -11,10 +11,12 @@ namespace rha{
         public:
          cWindow(glm::vec2 size, const std::string& title, cLogger& logger);
 
-         inline void close(){glfwTerminate(); run=false;}
-         inline void display(){glfwSwapBuffers(handle);}
-         inline bool getRun(){return run;}
+         void clear(GLclampf r=0, GLclampf g=0, GLclampf b=0);
+         void close(){glfwTerminate(); run=false;}
+         void display(){glfwSwapBuffers(handle);}
+
          inline GLFWwindow* getHandle(){return handle;}
+         inline bool getRun(){return run;}
     };
 }
 
