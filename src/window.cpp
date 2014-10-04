@@ -17,4 +17,9 @@ cWindow::cWindow(glm::vec2 size, const std::string& title, cLogger& logger) :run
 void cWindow::clear(GLclampf r, GLclampf g, GLclampf b){
     glClearColor(r/255, g/255, b/255, 255);
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+} glm::ivec2 cWindow::getSize(){
+    glm::ivec2 position;
+
+    glfwGetWindowSize(handle, &position.x, &position.y);
+    return position;
 }

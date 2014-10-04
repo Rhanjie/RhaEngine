@@ -6,7 +6,7 @@ cLogger::cLogger(const std::string& path): exit(0){
     if(!file.is_open()){
         std::cout<<"A fatal error occurred logger!";
         this->exit=true;
-    } //logger<<"Logger is ready!\n";
+    } *this<<"** "<<getLocalTime()<<" **\n";
 } cLogger &cLogger::operator <<(const std::string& text){
     file<<text;
     file.flush();

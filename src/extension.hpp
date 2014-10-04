@@ -6,5 +6,6 @@
 struct sVertex{GLfloat x, y, z, r, g, b, a;};
 
 bool check_phrase(const std::string& text, const std::string& phrase);
+std::string getLocalTime();
 
 #endif // EXTENSION_HPP_INCLUDED

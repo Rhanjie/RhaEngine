@@ -7,3 +7,14 @@ bool check_phrase(const std::string& text, const std::string& phrase){
     }
     return true;
 }
+std::string getLocalTime(){
+    struct tm* data;
+    char hour[80];
+    time_t timeAuxiliary;
+
+    time(&timeAuxiliary);
+    data=localtime(&timeAuxiliary);
+
+    strftime(hour, 80, "%H:%M:%S", data);
+    return hour;
+}

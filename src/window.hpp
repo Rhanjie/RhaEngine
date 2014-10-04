@@ -14,6 +14,7 @@ namespace rha{
          void clear(GLclampf r=0, GLclampf g=0, GLclampf b=0);
          void close(){glfwTerminate(); run=false;}
          void display(){glfwSwapBuffers(handle);}
+         glm::ivec2 getSize();
 
          inline GLFWwindow* getHandle(){return handle;}
          inline bool getRun(){return run;}
